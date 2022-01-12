@@ -84,7 +84,21 @@ export const Results = () => {
         </div>
       );
     case "/videos":
-      return "SEARCH";
+      return (
+        <div className="flex flex-wrap">
+          {results.map((video, index) => (
+            <div key={index} className="p-2">
+              {console.log(video)}
+              <ReactPlayer
+                url={video.additional_links?.[0].href}
+                controls
+                width="335px"
+                height="200px"
+              />
+            </div>
+          ))}
+        </div>
+      );
 
     default:
       return "ERROR";
