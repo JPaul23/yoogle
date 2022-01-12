@@ -7,10 +7,20 @@ export const Routes = () => {
   return (
     <div className="p-4">
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <Redirect to="/search" />
         </Route>
-        <Route path={["/search", "/images", "/news", "/videos"]}>
+
+        <Route exact path="/search">
+          <Results />
+        </Route>
+        <Route path="/images">
+          <Results />
+        </Route>
+        <Route path="/news">
+          <Results />
+        </Route>
+        <Route path="/videos">
           <Results />
         </Route>
       </Switch>
